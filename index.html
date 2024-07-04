@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shanessa's Resume</title>
+    <link href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<!-- test -->
+
+    <style>
+        :root {
+            --main-color: #B8FF6B;
+            --second-color: #AFAFAF;
+            --avatar-mobile-size: 80px;
+            --avatar-table-size: 160px;
+            --yt-avatar: 60px;
+        }
+
+        html {
+            transition: all .3s linear;
+        }
+
+        .nav-link {
+            border: 1px solid transparent;
+            border-radius: 5px;
+        }
+
+        .nav-link:hover {
+            color: var(--main-color);
+            border: 1px solid var(--main-color);
+        }
+
+        .bg-cover {
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .bg-maincolor {
+            background-color: var(--main-color);
+        }
+
+        .img-full {
+            max-width: 100%;
+        }
+
+        .header-carousel-item {
+            height: 680px;
+        }
+
+        .resume-text {
+            color: var(--main-color);
+        }
+
+        .skill-line {
+            position: relative;
+            font-weight: bold;
+        }
+
+        .skill-line::after {
+            position: absolute;
+            content: '';
+            width: 50px;
+            height: 50px;
+            border: 2px solid var(--bs-body-color);
+            border-radius: 5px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .comu-avatar {
+            width: var(--avatar-table-size);
+            height: var(--avatar-table-size);
+        }
+
+        .media-avatar {
+            width: var(--yt-avatar);
+            height: var(--yt-avatar);
+            border-radius: 50%;
+        }
+
+        .avatar-mainborder {
+            border: solid 1px var(--main-color);
+        }
+
+        .avatar-secborder {
+            border: solid 1px #333;
+        }
+
+        .mobile-media {
+            border-radius: 0.5rem;
+            transition: all .3s linear;
+            border: solid 2px white;
+        }
+
+        .mobile-media:hover {
+            transform: translate(0, -3px);
+            box-shadow: 0 2px 5px 1px rgba(30, 30, 30, 0.5);
+        }
+
+        .etc-hov {
+            transition: all .3s linear;
+        }
+
+        .etc-hov:hover {
+            color: var(--main-color);
+        }
+
+
+
+        .modal {
+            --bs-modal-width: auto;
+        }
+
+        .modal-body {
+            padding: 5px;
+        }
+
+        .modal-comu {
+            --bs-modal-width: 750px;
+        }
+
+        .modal-content {
+            align-items: center;
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: var(--main-color)
+        }
+
+        .offcanvas {
+            --bs-offcanvas-height: 70vh;
+        }
+
+        .card-body-p {
+            padding: 0 1rem;
+        }
+
+        .card-othergraphic {
+            flex-direction: row;
+        }
+
+
+        /* 影片尺寸 */
+        .videobox {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .videobox-ver {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 133%;
+        }
+
+        .videobox iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 影片尺寸 */
+
+        /* 至頂按鈕 */
+        .btn-top {
+            position: fixed;
+            bottom: 2%;
+            right: 2%;
+            display: flex;
+            flex-flow: column;
+            z-index: 999;
+        }
+
+        .btn-top a {
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-top .gotop {
+            background: var(--main-color);
+            color: #333;
+            font-size: 2em;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+        }
+
+        /* 至頂按鈕 */
+
+
+        @media (max-width: 767px) {
+            .skill-line::after {
+                width: 43px;
+                height: 43px;
+            }
+
+            .phone-back {
+                opacity: 0.2;
+            }
+
+            .header-carousel-item {
+                height: 300px;
+            }
+
+            .comu-avatar {
+                width: var(--avatar-mobile-size);
+                height: var(--avatar-mobile-size);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導覽 -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+        <div class="container-fluid">
+            <a class="navbar-brand d-lg-none" href="#">Shanessa</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#skill">使用軟體</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#pbc">書籍相關</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#comu">社群相關</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#ani">橫式影片</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#mov">直式影片</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#ldpg">網頁相關</a>
+                    </li>
+                    <li class="nav-item mx-1">
+                        <a class="nav-link" href="#oth">其他項目</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- 導覽 -->
+
+    <!-- 簡歷 -->
+    <header class="container-fluid bg-dark text-light py-5" style="position: relative;">
+        <div class="row">
+            <div class="col-md-5 bg-cover phone-back" style="position: absolute; top: 0; bottom: 0;
+                background-image: url(images/IMG_GRAY.jpg);">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row justify-content-end" style="position: relative;">
+                <div class="col-md-7 px-5">
+                    <h2>陳善蓮<span class="mx-3 fs-5 text-secondary">Shanessa</span></h2>
+                    <h5>1991.02.22</h5>
+                    <h5 class="mb-3">台南應用科技大學視覺傳達設計系</h5>
+                    <table>
+                        <tr>
+                            <th class="resume-text" style="width: 45%;">晟景數位文化</th>
+                            <td class="text-secondary">2014/02-2017/06</td>
+                        </tr>
+                        <tr>
+                            <th class="resume-text">生活工場</th>
+                            <td class="text-secondary">2018/04-2018/10</td>
+                        </tr>
+                        <tr>
+                            <th class="resume-text">志光教育科技</th>
+                            <td class="text-secondary">2019/03-2024-/05</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 簡歷 -->
+
+    <!-- 工具 -->
+    <section class="bg-maincolor" id="skill">
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Photoshop">P<span class="fs-2">s</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Indesign">I<span class="fs-2">d</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="After Effects">A<span class="fs-2">e</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Power point">P</p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Illustrator">A<span class="fs-2">i</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Premiere">P<span class="fs-2">r</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Word">W</p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-4 col-md-3">
+                    <div class="row p-3">
+                        <div class="col-12">
+                            <p class="fs-1 my-0 mx-auto skill-line text-center" data-toggle="tooltip"
+                                data-placement="top" title="Visual Studio">V<span class="fs-2">s</span></p>
+                        </div>
+                        <div class="col-12 text-center">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 工具 -->
+
+    <!-- 區塊一文宣  -->
+    <section class="" id="pbc">
+        <div id="pbc-slide" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#pbc-slide" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#pbc-slide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#pbc-slide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item header-carousel-item bg-cover active"
+                    style="background-image: url(images/book-B5.jpg);">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>B5考場手冊</h5>
+                        <p>封面、目錄之設計兼內容的版面設計及編排</p>
+                    </div>
+                </div>
+                <div class="carousel-item header-carousel-item bg-cover"
+                    style="background-image: url(images/book-B6.jpg);">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>B6考場口袋書</h5>
+                        <p>此版手冊分正反兩面，左翻為考生的經驗談，右翻為考古題</p>
+                    </div>
+                </div>
+                <div class="carousel-item header-carousel-item bg-cover"
+                    style="background-image: url(images/book-papper.jpg);">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>考場全開報刊式文宣</h5>
+                        <p>除了手冊型文宣，也有同報紙型式的全開文宣</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#pbc-slide" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#pbc-slide" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        </div>
+    </section>
+    <!-- 區塊一文宣  -->
+
+    <!-- 區塊二社群 -->
+    <section class="bg-secondary py-5" id="comu">
+        <div class="container">
+            <div class="row">
+                <!-- 社群社長 -->
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar  avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comu-one" style="background-image: url(images/avatar-1.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="comu-one" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="images/comu-1.jpg" alt="" class="img-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comu-two" style="background-image: url(images/avatar-2.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="comu-two" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <img src="images/comu-2.jpg" alt="" class="img-full">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comu-three" style="background-image: url(images/avatar-3.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comu-three" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="comu3-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="4"
+                                                aria-label="Slide 5"></button>
+                                            <button type="button" data-bs-target="#comu3-slide" data-bs-slide-to="5"
+                                                aria-label="Slide 6"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comu-3-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-3-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-3-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-3-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-3-5.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-3-6.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#comu3-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#comu3-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comu-four" style="background-image: url(images/avatar-4.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comu-four" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="comu4-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#comu4-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#comu4-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#comu4-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#comu4-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                            <button type="button" data-bs-target="#comu4-slide" data-bs-slide-to="4"
+                                                aria-label="Slide 5"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comu-4-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-4-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-4-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-4-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comu-4-5.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#comu4-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#comu4-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 社群王小編 -->
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comuwang-one" style="background-image: url(images/wangavatar1.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comuwang-one" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="wang1-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#wang1-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#wang1-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#wang1-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#wang1-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comuwang1-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang1-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang1-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang1-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#wang1-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#wang1-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comuwang-two" style="background-image: url(images/wangavatar2.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comuwang-two" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="wang2-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#wang2-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#wang2-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#wang2-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#wang2-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comuwang2-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang2-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang2-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang2-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#wang2-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#wang2-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comuwang-three" style="background-image: url(images/wangavatar3.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comuwang-three" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="wang3-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#wang3-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#wang3-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#wang3-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#wang3-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comuwang3-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang3-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang3-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang3-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#wang3-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#wang3-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-4 col-md-3 text-center py-3">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn bg-cover comu-avatar avatar-mainborder" data-bs-toggle="modal"
+                        data-bs-target="#comuwang-four" style="background-image: url(images/wangavatar4.jpg);">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade modal-comu" id="comuwang-four" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <div id="wang4-slide" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                            <button type="button" data-bs-target="#wang4-slide" data-bs-slide-to="0"
+                                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                                            <button type="button" data-bs-target="#wang4-slide" data-bs-slide-to="1"
+                                                aria-label="Slide 2"></button>
+                                            <button type="button" data-bs-target="#wang4-slide" data-bs-slide-to="2"
+                                                aria-label="Slide 3"></button>
+                                            <button type="button" data-bs-target="#wang4-slide" data-bs-slide-to="3"
+                                                aria-label="Slide 4"></button>
+                                        </div>
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img src="images/comuwang4-1.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang4-2.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang4-3.jpg" class="img-full" alt="...">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img src="images/comuwang4-4.jpg" class="img-full" alt="...">
+                                            </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#wang4-slide" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#wang4-slide" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Next</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 區塊二社群 -->
+
+    <!-- 區塊三橫式 -->
+    <section class="py-5" id="ani">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-6 py-2">
+                    <div class="card">
+                        <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/8U7VnrGItks?si=LFu7N6u6xgYeae1a"
+                            data-target="#videoModal">
+                            <img src="images/horizontal-1.jpg" class="card-img-top" alt="...">
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content videobox">
+                                    <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body-p">
+                            <p class="card-text">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="media-avatar bg-cover"
+                                        style="background-image: url(images/monster.jpg);"></div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span>字卡設計及片頭尾的視覺設計與動畫。因是警察類科，用色選擇比較沉穩的藍與灰為主色調。</span>
+                                    <small>(註：影片為作品集使用，請勿外傳)</small>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 py-2">
+                    <div class="card">
+                        <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/DVmacPBv3AM?si=3M254_I-o0fBbSec"
+                            data-target="#videoModal">
+                            <img src="images/horizontal-2.jpg" class="card-img-top" alt="...">
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content videobox">
+                                    <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body-p">
+                            <p class="card-text">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="media-avatar bg-cover"
+                                        style="background-image: url(images/monster.jpg);"></div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span>版面與用色有別於警察類科更活潑，因選用仿電腦視窗的版面，動畫上也加入像點按的動作。</span>
+                                    <small>(註：影片為作品集使用，請勿外傳)</small>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 py-2">
+                    <div class="card">
+                        <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/6Rw9M-qVL6U?si=5YomYJedk3qh5N_D"
+                            data-target="#videoModal">
+                            <img src="images/horizontal-3.jpg" class="card-img-top" alt="...">
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content videobox">
+                                    <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body-p">
+                            <p class="card-text">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="media-avatar bg-cover"
+                                        style="background-image: url(images/monster.jpg);"></div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span>由於原素材為其他單位給予，因此能調整的部分不多，如何製作合適的字卡與剪輯，是這支影片的重點。</span>
+                                    <small>(註：影片為作品集使用，請勿外傳)</small>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 py-2">
+                    <div class="card">
+                        <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                            data-src="https://www.youtube.com/embed/Pv9SZx0Kyas?si=S9VpWrE0gIdNkVjt"
+                            data-target="#videoModal">
+                            <img src="images/horizontal-4.jpg" class="card-img-top" alt="...">
+                        </button>
+                        <!-- Modal -->
+                        <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content videobox">
+                                    <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body-p">
+                            <p class="card-text">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <div class="media-avatar bg-cover"
+                                        style="background-image: url(images/monster.jpg);"></div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <span>此為第一次嘗試製作動畫影片，由於覺得同事的活動企劃很有趣，故想嘗試製作有別以往的影片。</span>
+                                    <small>(註：影片為作品集使用，請勿外傳)</small>
+                                </div>
+                            </div>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 區塊三橫式 -->
+
+    <!-- 區塊四直式 -->
+    <section class="bg-dark text-light py-5" id="mov">
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-md-3 py-2">
+                    <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                        data-src="https://www.youtube.com/embed/KL2-yEe9I5o?si=ycZ0WZJoIxQWPyNZ"
+                        data-target="#videoModal">
+                        <img src="images/vertical-1.jpg" class="img-full mobile-media" alt="...">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content videobox-ver">
+                                <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 py-2">
+                    <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                        data-src="https://www.youtube.com/embed/XqBtp96Svmo?si=pPI1WdbAsXVQ5LoS"
+                        data-target="#videoModal">
+                        <img src="images/vertical-2.jpg" class="img-full mobile-media" alt="...">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content videobox-ver">
+                                <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 py-2">
+                    <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                        data-src="https://www.youtube.com/embed/AZNtFLMTvrg?si=Pb5d3MC3Om3syssP"
+                        data-target="#videoModal">
+                        <img src="images/vertical-3.jpg" class="img-full mobile-media" alt="...">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content videobox-ver">
+                                <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3 py-2">
+                    <button type="button" class="btn bg-cover video-btn" data-toggle="modal"
+                        data-src="https://www.youtube.com/embed/B7PNbrG4zwM?si=ffF1ydcP3Su5iJ0g"
+                        data-target="#videoModal">
+                        <img src="images/vertical-4.jpg" class="img-full mobile-media" alt="...">
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content videobox-ver">
+                                <iframe src="" id="video" allowscriptaccess="always" allow="autoplay"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 區塊四直式 -->
+
+    <!-- 區塊五網頁 -->
+    <section class="bg-secondary py-4" id="ldpg">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="accordion" id="wpresslink">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    Wordpress文章建置-1
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                data-bs-parent="#wpresslink">
+                                <div class="accordion-body">
+                                    <a href="https://www.myroad.com.tw/cluster/" target="_blank">認識學群</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Wordpress文章建置-2
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                data-bs-parent="#wpresslink">
+                                <div class="accordion-body">
+                                    <a href="https://www.myroad.com.tw/%e6%96%87%e5%8f%b2%e5%93%b2%e5%ad%b8%e7%be%a4/"
+                                        target="_blank">文史學群</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    Wordpress文章建置-3
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                data-bs-parent="#wpresslink">
+                                <div class="accordion-body">
+                                    <a href="https://www.myroad.com.tw/job/%E5%B0%B1%E6%A5%AD%E8%80%83%E7%A7%91-3779/"
+                                        target="_blank">北捷徵才</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 區塊五網頁 -->
+
+    <!-- 區塊六其他 -->
+    <section class="py-4" id="oth">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-6 col-sm-3 py-3 etc-hov">
+                    <div><i class="fa-solid fa-user-large fa-3x mb-3"></i></div>
+                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvas-chac"
+                        aria-controls="canvas-chac">角色插圖</button>
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="canvas-chac"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasTopLabel">角色的調整與動作設計：預設幾組常用的動作，可以在日常發文作為插圖使用。</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body container">
+                            <div class="row">
+                                <div class="col-4 col-sm-3"><img src="images/othone-wang-rank.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-wang-rest.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-mei-rank.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-mei-rest.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-Erobot-rank.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-Erobot-rest.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-white-rank.png" class="img-full"
+                                        alt=""></div>
+                                <div class="col-4 col-sm-3"><img src="images/othone-white-rest.png" class="img-full"
+                                        alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 py-3 etc-hov">
+                    <div><i class="fa-solid fa-note-sticky fa-3x mb-3"></i></div>
+                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvas-ppt"
+                        aria-controls="canvas-ppt">簡報設計</button>
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="canvas-ppt"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasTopLabel">讀書會及會議簡報製作：製作新的簡報亦或協助調整簡報版面與風格。</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body container">
+                            <div id="oth-ppt-canvas" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-indicators">
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="0"
+                                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="1"
+                                        aria-label="Slide 2"></button>
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="2"
+                                        aria-label="Slide 3"></button>
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="3"
+                                        aria-label="Slide 4"></button>
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="4"
+                                        aria-label="Slide 5"></button>
+                                    <button type="button" data-bs-target="#oth-ppt-canvas" data-bs-slide-to="5"
+                                        aria-label="Slide 6"></button>
+                                </div>
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="images/PPT-COV.jpg" class="img-full" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/PPT-CON01.jpg" class="img-full" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/PPT-CON02.jpg" class="img-full" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/PPT-CON03.jpg" class="img-full" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/PPT-CON04.jpg" class="img-full" alt="...">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img src="images/PPT-END.jpg" class="img-full" alt="...">
+                                    </div>
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#oth-ppt-canvas"
+                                    data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#oth-ppt-canvas"
+                                    data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 py-3 etc-hov">
+                    <div><i class="fa-solid fa-circle-nodes fa-3x mb-3"></i></div>
+                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#canvas-banner" aria-controls="canvas-banner">banner</button>
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="canvas-banner"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasTopLabel">多媒體banner：因應不同媒體的版面需求，製作對應尺寸的BN並根據版面尺寸做版面調整。</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6"><img src="images/show-bn-LEFT.jpg" class="img-full"
+                                            alt=""></div>
+                                    <div class="col-12 col-lg-6"><img src="images/show-bn-RIGHT.jpg" class="img-full"
+                                            alt=""></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-sm-3 py-3 etc-hov">
+                    <div><i class="fa-regular fa-clipboard fa-3x mb-3"></i></div>
+                    <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvas-etc"
+                        aria-controls="canvas-etc">其他項目</button>
+                    <div class="offcanvas offcanvas-top" tabindex="-1" id="canvas-etc"
+                        aria-labelledby="offcanvasTopLabel">
+                        <div class="offcanvas-header">
+                            <h5 id="offcanvasTopLabel">非常態項目</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-4 py-2">
+                                        <div class="card">
+                                            <img src="images/oth-newyear.jpg" class="card-img-top pt-3" alt="...">
+                                            <div class="card-body">
+                                              <h5 class="card-title">電子賀卡</h5>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 py-2">
+                                        <div class="card">
+                                            <img src="images/oth-glory.jpg" class="card-img-top pt-3" alt="...">
+                                            <div class="card-body">
+                                              <h5 class="card-title">獎狀設計</h5>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 py-2">
+                                        <div class="card">
+                                            <img src="images/oth-newsletter.jpg" class="card-img-top pt-3" alt="...">
+                                            <div class="card-body">
+                                              <h5 class="card-title">電子報更新</h5>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 區塊六其他 -->
+
+    <!-- 聯繫 -->
+    <footer class="bg-maincolor">
+        <div class="container">
+            <div class="row py-3">
+                <h6 class="col-6 mb-0"><i class="fa-solid fa-phone"></i><span class="px-1">電話 :</span>0938897266</h6>
+                <h6 class="col-6 mb-0"><i class="fa-solid fa-envelope"></i><span class="px-1">e-mail
+                        :</span>n04su06@gmail.com</h6>
+            </div>
+        </div>
+    </footer>
+    <!-- 聯繫 -->
+
+    <!--置頂按鈕-->
+    <div class="btn-top">
+        <a href="" class="gotop"><i class="fas fa-angle-double-up"></i></a>
+    </div>
+    <!--置頂按鈕-->
+
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+
+
+    <!-- 外接YT -->
+    <script>
+        $(document).ready(function () {
+            var $videoSrc;
+            $('.video-btn').click(function () {
+                $videoSrc = $(this).data("src");
+            });
+            console.log($videoSrc);
+            $('#videoModal').on('shown.bs.modal', function (e) {
+                $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+
+            })
+            $('#videoModal').on('hide.bs.modal', function (e) {
+                $("#video").attr('src', $videoSrc);
+            })
+        });
+    </script>
+    <!-- 外接YT -->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.rawgit.com/JacobLett/bootstrap4-latest/master/bootstrap-4-latest.min.js"></script>
+
+
+</body>
+
+</html>
