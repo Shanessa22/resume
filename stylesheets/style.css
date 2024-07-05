@@ -1,0 +1,225 @@
+:root {
+    --main-color: #B8FF6B;
+    --second-color: #AFAFAF;
+    --avatar-mobile-size: 80px;
+    --avatar-table-size: 160px;
+    --yt-avatar: 60px;
+}
+
+html {
+    transition: all .3s linear;
+}
+
+.nav-link {
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.nav-link:hover {
+    color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.bg-cover {
+    background-position: center center;
+    background-size: cover;
+}
+
+.bg-maincolor {
+    background-color: var(--main-color);
+}
+
+.img-full {
+    max-width: 100%;
+}
+
+.header-carousel-item {
+    height: 680px;
+}
+
+.resume-text {
+    color: var(--main-color);
+}
+
+.skill-line {
+    position: relative;
+    font-weight: bold;
+}
+
+.skill-line::after {
+    position: absolute;
+    content: '';
+    width: 50px;
+    height: 50px;
+    border: 2px solid var(--bs-body-color);
+    border-radius: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.comu-avatar {
+    width: var(--avatar-table-size);
+    height: var(--avatar-table-size);
+}
+
+.media-avatar {
+    width: var(--yt-avatar);
+    height: var(--yt-avatar);
+    border-radius: 50%;
+}
+
+.avatar-mainborder {
+    border: solid 1px var(--main-color);
+}
+
+.avatar-secborder {
+    border: solid 1px #333;
+}
+
+.mobile-media {
+    border-radius: 0.5rem;
+    transition: all .3s linear;
+    border: solid 2px white;
+}
+
+.mobile-media:hover {
+    transform: translate(0, -3px);
+    box-shadow: 0 2px 5px 1px rgba(30, 30, 30, 0.5);
+}
+
+.etc-hov {
+    transition: all .3s linear;
+}
+
+.etc-hov:hover {
+    color: var(--main-color);
+}
+
+
+
+.modal {
+    --bs-modal-width: auto;
+}
+
+.modal-body {
+    padding: 5px;
+}
+
+.modal-comu {
+    --bs-modal-width: 750px;
+}
+
+.modal-content {
+    align-items: center;
+    width: auto;
+    margin: 0 auto;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--main-color)
+}
+
+.offcanvas {
+    --bs-offcanvas-height: 70vh;
+}
+
+.card-body-p {
+    padding: 0 1rem;
+}
+
+.card-othergraphic {
+    flex-direction: row;
+}
+
+
+/* 影片尺寸 */
+.videobox {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+}
+
+.videobox-ver {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 133%;
+}
+
+.videobox iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 影片尺寸 */
+
+/* 至頂按鈕 */
+.btn-top {
+    position: fixed;
+    bottom: 2%;
+    right: 2%;
+    display: flex;
+    flex-flow: column;
+    z-index: 999;
+}
+
+.btn-top a {
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.btn-top .gotop {
+    background: var(--main-color);
+    color: #333;
+    font-size: 2em;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* 至頂按鈕 */
+
+
+@media (max-width: 767px) {
+    .skill-line::after {
+        width: 43px;
+        height: 43px;
+    }
+
+    .phone-back {
+        opacity: 0.2;
+    }
+
+    .header-carousel-item {
+        height: 300px;
+    }
+
+    .comu-avatar {
+        width: var(--avatar-mobile-size);
+        height: var(--avatar-mobile-size);
+    }
+}
+
+/* TODO: 懶人預留nav高度的方式，通常只會在確定nav高度不會在變動時使用 */
+header {
+  margin-top: 60px;
+}
+
+.navbar {
+  height: 60px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+  box-shadow: 0 0px 10px black;
+}
