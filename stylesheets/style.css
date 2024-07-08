@@ -210,8 +210,10 @@ html {
     }
 }
 
+
+
 /* TODO: 懶人預留nav高度的方式，通常只會在確定nav高度不會在變動時使用 */
-header {
+/* header {
   margin-top: 60px;
 }
 
@@ -223,4 +225,4 @@ header {
   width: 100%;
   z-index: 99;
   box-shadow: 0 0px 10px black;
-}
+} */
